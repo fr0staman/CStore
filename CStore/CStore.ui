@@ -2634,6 +2634,12 @@ Button */
           </property>
           <item>
            <widget class="QFrame" name="contentTopBg">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>40</height>
+             </size>
+            </property>
             <property name="maximumSize">
              <size>
               <width>16777215</width>
@@ -2667,6 +2673,12 @@ Button */
              </property>
              <item>
               <widget class="QFrame" name="leftBox">
+               <property name="minimumSize">
+                <size>
+                 <width>0</width>
+                 <height>0</height>
+                </size>
+               </property>
                <property name="maximumSize">
                 <size>
                  <width>16777215</width>
@@ -2677,7 +2689,7 @@ Button */
                 <string notr="true">background-color: transparent;</string>
                </property>
                <property name="frameShape">
-                <enum>QFrame::StyledPanel</enum>
+                <enum>QFrame::NoFrame</enum>
                </property>
                <property name="frameShadow">
                 <enum>QFrame::Raised</enum>
@@ -2703,7 +2715,7 @@ Button */
                   <property name="maximumSize">
                    <size>
                     <width>16777215</width>
-                    <height>38</height>
+                    <height>40</height>
                    </size>
                   </property>
                   <property name="font">
@@ -2725,9 +2737,19 @@ Button */
                  <widget class="QLabel" name="rightLabel">
                   <property name="minimumSize">
                    <size>
-                    <width>506</width>
+                    <width>200</width>
                     <height>0</height>
                    </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>220</width>
+                    <height>16777215</height>
+                   </size>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">border-top: 5px solid qlineargradient(spread:pad, x1:0.034, y1:0, x2:2, y2:0, stop:0.499 rgba(255, 121, 198, 255), stop:0.5 rgba(85, 170, 255, 0));
+    background-color: rgb(40, 44, 52)</string>
                   </property>
                   <property name="text">
                    <string>Вітаємо вас, дорогий працівник ❤️</string>
@@ -2736,7 +2758,7 @@ Button */
                    <bool>false</bool>
                   </property>
                   <property name="alignment">
-                   <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                   <set>Qt::AlignCenter</set>
                   </property>
                   <property name="wordWrap">
                    <bool>false</bool>
@@ -2771,13 +2793,13 @@ Button */
                  <number>0</number>
                 </property>
                 <property name="topMargin">
-                 <number>1</number>
+                 <number>0</number>
                 </property>
                 <property name="rightMargin">
                  <number>0</number>
                 </property>
                 <property name="bottomMargin">
-                 <number>1</number>
+                 <number>0</number>
                 </property>
                 <item>
                  <widget class="QPushButton" name="minimizeButton">
