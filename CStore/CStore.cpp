@@ -12,8 +12,7 @@ CStore::CStore(QWidget *parent)
     setWindowFlags(Qt::FramelessWindowHint);
     setWindowIcon(QIcon(":/CStore/icons/icon.png"));
     //ui.tableWidget->setSortingEnabled(true);
-    ui.tableWidgetTovar->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
-    ui.tableWidgetOrder->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
+    
     //connect(ui.tovarButton, SIGNAL(clicked()), this, SLOT(tovarButton()));
     //connect(ui.orderButton, SIGNAL(clicked()), this, SLOT(orderButton()));
     connect(ui.closeButton, SIGNAL(clicked()), this, SLOT(close()));
@@ -32,6 +31,8 @@ CStore::CStore(QWidget *parent)
     connect(ui.numberText, SIGNAL(returnPressed()), this, SLOT(settingFocus()));
     tovarButton();
     orderButton();
+    ui.tableWidgetTovar->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
+    ui.tableWidgetOrder->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
 }
 
 void CStore::settingFocus()
@@ -107,35 +108,50 @@ void CStore::setsIndex()
 {
     if (sender()->objectName() == "btn_home") {
         ui.stackedWidget->setCurrentIndex(0);
-        ui.btn_home->setStyleSheet("background-color: rgb(40, 44, 52);");
-        ui.btn_stats->setStyleSheet("background-color: transparent;");
-        ui.btn_edit->setStyleSheet("background-color: transparent;");
-        ui.btn_right->setStyleSheet("background-color: transparent;");
+        ui.btn_home->setStyleSheet(
+            "border-left: 22px solid qlineargradient(spread:pad, x1:0.034, y1:0, x2:0.216, y2:0, stop:0.499 rgba(255, 121, 198, 255), stop:0.5 rgba(85, 170, 255, 0)); background-color: rgb(40, 44, 52);");
+        ui.btn_stats->setStyleSheet(
+            "background-color: transparent; QPushButton:hover{ background - color: rgb(40, 44, 52);} QPushButton:pressed{background - color: rgb(189, 147, 249); color: rgb(255, 255, 255);}");
+        ui.btn_edit->setStyleSheet(
+            "background-color: transparent; QPushButton:hover{ background - color: rgb(40, 44, 52);} QPushButton:pressed{background - color: rgb(189, 147, 249); color: rgb(255, 255, 255);}");
+        ui.btn_right->setStyleSheet(
+            "background-color: transparent; QPushButton:hover{ background - color: rgb(40, 44, 52);} QPushButton:pressed{background - color: rgb(189, 147, 249); color: rgb(255, 255, 255);}");
     }
     else if (sender()->objectName() == "btn_stats") {
         ui.stackedWidget->setCurrentIndex(1);
-        ui.btn_stats->setStyleSheet("background-color: rgb(40, 44, 52);");
-        ui.btn_home->setStyleSheet("background-color: transparent;");
-        ui.btn_edit->setStyleSheet("background-color: transparent;");
-        ui.btn_right->setStyleSheet("background-color: transparent;");
+        ui.btn_stats->setStyleSheet(
+            "border-left: 22px solid qlineargradient(spread:pad, x1:0.034, y1:0, x2:0.216, y2:0, stop:0.499 rgba(255, 121, 198, 255), stop:0.5 rgba(85, 170, 255, 0)); background-color: rgb(40, 44, 52);");
+        ui.btn_home->setStyleSheet(
+            "background-color: transparent; QPushButton:hover{ background - color: rgb(40, 44, 52);} QPushButton:pressed{background - color: rgb(189, 147, 249); color: rgb(255, 255, 255);}");
+        ui.btn_edit->setStyleSheet(
+            "background-color: transparent; QPushButton:hover{ background - color: rgb(40, 44, 52);} QPushButton:pressed{background - color: rgb(189, 147, 249); color: rgb(255, 255, 255);}");
+        ui.btn_right->setStyleSheet(
+            "background-color: transparent; QPushButton:hover{ background - color: rgb(40, 44, 52);} QPushButton:pressed{background - color: rgb(189, 147, 249); color: rgb(255, 255, 255);}");
     }
     else if (sender()->objectName() == "btn_edit") {
         ui.stackedWidget->setCurrentIndex(2);
-        ui.btn_edit->setStyleSheet("background-color: rgb(40, 44, 52);");
-        ui.btn_home->setStyleSheet("background-color: transparent;");
-        ui.btn_stats->setStyleSheet("background-color: transparent;");
-        ui.btn_right->setStyleSheet("background-color: transparent;");
+        ui.btn_edit->setStyleSheet(
+            "border-left: 22px solid qlineargradient(spread:pad, x1:0.034, y1:0, x2:0.216, y2:0, stop:0.499 rgba(255, 121, 198, 255), stop:0.5 rgba(85, 170, 255, 0)); background-color: rgb(40, 44, 52);");
+        ui.btn_home->setStyleSheet(
+            "background-color: transparent; QPushButton:hover{ background - color: rgb(40, 44, 52);} QPushButton:pressed{background - color: rgb(189, 147, 249); color: rgb(255, 255, 255);}");
+        ui.btn_stats->setStyleSheet(
+            "background-color: transparent; QPushButton:hover{ background - color: rgb(40, 44, 52);} QPushButton:pressed{background - color: rgb(189, 147, 249); color: rgb(255, 255, 255);}");
+        ui.btn_right->setStyleSheet(
+            "background-color: transparent; QPushButton:hover{ background - color: rgb(40, 44, 52);} QPushButton:pressed{background - color: rgb(189, 147, 249); color: rgb(255, 255, 255);}");
     }
     else if (sender()->objectName() == "btn_right") {
         ui.stackedWidget->setCurrentIndex(3);
-        ui.btn_right->setStyleSheet("background-color: rgb(40, 44, 52);");
-        ui.btn_home->setStyleSheet("background-color: transparent;");
-        ui.btn_stats->setStyleSheet("background-color: transparent;");
-        ui.btn_edit->setStyleSheet("background-color: transparent;");
+        ui.btn_right->setStyleSheet(
+            "border-left: 22px solid qlineargradient(spread:pad, x1:0.034, y1:0, x2:0.216, y2:0, stop:0.499 rgba(255, 121, 198, 255), stop:0.5 rgba(85, 170, 255, 0)); background-color: rgb(40, 44, 52);");
+        ui.btn_home->setStyleSheet(
+            "background-color: transparent; QPushButton:hover{ background - color: rgb(40, 44, 52);} QPushButton:pressed{background - color: rgb(189, 147, 249); color: rgb(255, 255, 255);}");
+        ui.btn_stats->setStyleSheet(
+            "background-color: transparent; QPushButton:hover{ background - color: rgb(40, 44, 52);} QPushButton:pressed{background - color: rgb(189, 147, 249); color: rgb(255, 255, 255);}");
+        ui.btn_edit->setStyleSheet(
+            "background-color: transparent; QPushButton:hover{ background - color: rgb(40, 44, 52);} QPushButton:pressed{background - color: rgb(189, 147, 249); color: rgb(255, 255, 255);}");
     }
     else
         ui.stackedWidget->setCurrentIndex(4);
-    
 }
 
 void CStore::mousePressEvent(QMouseEvent* event)

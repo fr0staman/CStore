@@ -231,7 +231,7 @@ Content App */
 /* /////////////////////////////////////////////////////////////////////////////////////////////////
 QTableWidget */
 QTableWidget {	
-	background-color: transparent;
+	/*background-color: transparent;*/
 	padding: 10px;
 	border-radius: 5px;
 	gridline-color: rgb(44, 49, 58);
@@ -2749,7 +2749,7 @@ Button */
                   </property>
                   <property name="styleSheet">
                    <string notr="true">border-top: 5px solid qlineargradient(spread:pad, x1:0.034, y1:0, x2:2, y2:0, stop:0.499 rgba(255, 121, 198, 255), stop:0.5 rgba(85, 170, 255, 0));
-    background-color: rgb(40, 44, 52)</string>
+    background-color: rgb(44, 49, 58)</string>
                   </property>
                   <property name="text">
                    <string>Вітаємо вас, дорогий працівник ❤️</string>
