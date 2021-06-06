@@ -2693,7 +2693,7 @@ Button */
                  <number>0</number>
                 </property>
                 <property name="rightMargin">
-                 <number>0</number>
+                 <number>50</number>
                 </property>
                 <property name="bottomMargin">
                  <number>0</number>
@@ -2718,6 +2718,31 @@ Button */
                   </property>
                   <property name="text">
                    <string>  Project_CStore.</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QLabel" name="rightLabel">
+                  <property name="minimumSize">
+                   <size>
+                    <width>506</width>
+                    <height>0</height>
+                   </size>
+                  </property>
+                  <property name="text">
+                   <string>Вітаємо вас, дорогий працівник ❤️</string>
+                  </property>
+                  <property name="scaledContents">
+                   <bool>false</bool>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                  </property>
+                  <property name="wordWrap">
+                   <bool>false</bool>
+                  </property>
+                  <property name="openExternalLinks">
+                   <bool>false</bool>
                   </property>
                  </widget>
                 </item>
