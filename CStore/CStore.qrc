@@ -1,0 +1,12 @@
+<RCC>
+  <qresource prefix="/CStore">
+    <file>icons/arrow.png</file>
+    <file>icons/orderIcon.png</file>
+    <file>icons/searchIcon.png</file>
+    <file>icons/view.png</file>
+    <file>icons/minWindows.png</file>
+    <file>icons/closeWindow.png</file>
+    <file>icons/smallWindows.png</file>
+    <file>icons/fullWindows.png</file>
+  </qresource>
+</RCC>
