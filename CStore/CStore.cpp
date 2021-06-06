@@ -11,9 +11,10 @@ CStore::CStore(QWidget *parent)
     ui.setupUi(this);
     setWindowFlags(Qt::FramelessWindowHint);
     //ui.tableWidget->setSortingEnabled(true);
-    ui.tableWidget->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
-    connect(ui.tovarButton, SIGNAL(clicked()), this, SLOT(tovarButton()));
-    connect(ui.orderButton, SIGNAL(clicked()), this, SLOT(orderButton()));
+    ui.tableWidgetTovar->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
+    ui.tableWidgetOrder->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
+    //connect(ui.tovarButton, SIGNAL(clicked()), this, SLOT(tovarButton()));
+    //connect(ui.orderButton, SIGNAL(clicked()), this, SLOT(orderButton()));
     connect(ui.closeButton, SIGNAL(clicked()), this, SLOT(close()));
     connect(ui.maximizeButton, SIGNAL(clicked()), this, SLOT(Maximize()));
     connect(ui.minimizeButton, SIGNAL(clicked()), this, SLOT(showMinimized()));
@@ -25,6 +26,7 @@ CStore::CStore(QWidget *parent)
     connect(ui.addTovarButton, SIGNAL(clicked()), this, SLOT(AddingTovar()));
     connect(ui.searchText, SIGNAL(returnPressed()), this, SLOT(Searching()));
     tovarButton();
+    orderButton();
 }
 
 void CStore::AddingTovar()
@@ -54,14 +56,14 @@ void CStore::AddingTovar()
 }
 void CStore::Searching()
 {
-    ui.tableWidget->setRowCount(0);
+    ui.tableWidgetTovar->setRowCount(0);
     std::fstream fileInput;
     using json = nlohmann::json;
     json file;
     fileInput.open("data/data.json");
     fileInput >> file;
     std::string srch = ui.searchText->text().toStdString();
-    ui.tableWidget->setRowCount(file["tovar"].size());
+    ui.tableWidgetTovar->setRowCount(file["tovar"].size());
     int n = 0;
     for (int i = 0; i < file["tovar"].size(); i++) {
         if (std::string(file["tovar"][i]["name"]).find(srch) != std::string::npos) {
@@ -70,12 +72,12 @@ void CStore::Searching()
                 try {
                     QTableWidgetItem* its = new QTableWidgetItem
                     (QString::fromStdString(file["tovar"][i][keys[b]]));
-                    ui.tableWidget->setItem(n, b, its);
+                    ui.tableWidgetTovar->setItem(n, b, its);
                 }
                 catch (nlohmann::detail::type_error) {
                     QTableWidgetItem* its = new QTableWidgetItem
                     (QString::fromStdString(file["tovar"][i][keys[b]].dump()));
-                    ui.tableWidget->setItem(n, b, its);
+                    ui.tableWidgetTovar->setItem(n, b, its);
                 }
             }
             ++n;
@@ -125,15 +127,16 @@ void CStore::Maximize()
 
 void CStore::tovarButton()
 {
-    fillTable("tovar", { "id", "name", "price", "number" }, { "ID", "Name", "Price", "Number" });
+    fillTovarTable("tovar", { "id", "name", "price", "number" }, { "ID", "Name", "Price", "Number" });
 }
 
 void CStore::orderButton()
 {
-    fillTable("order", { "id", "id_tovar", "count", "date" }, { "ID", "TovarID", "Count", "Date" });
+    fillOrderTable("order", { "id", "id_tovar", "count", "date" }, { "ID", "TovarID", "Count", "Date" });
 }
 
-void CStore::fillTable(std::string name, std::vector<std::string> keys, QStringList labels)
+
+void CStore::fillOrderTable(std::string name, std::vector<std::string> keys, QStringList labels)
 {
     std::fstream fileInput;
     using json = nlohmann::json;
@@ -142,24 +145,53 @@ void CStore::fillTable(std::string name, std::vector<std::string> keys, QStringL
     fileInput >> file;
     int ColumnCount = file[name][0].size();
     int RowCount = file[name].size();
-    ui.tableWidget->setColumnCount(ColumnCount);
-    ui.tableWidget->setRowCount(RowCount);
-    ui.tableWidget->setHorizontalHeaderLabels(labels);
+    ui.tableWidgetOrder->setColumnCount(ColumnCount);
+    ui.tableWidgetOrder->setRowCount(RowCount);
+    ui.tableWidgetOrder->setHorizontalHeaderLabels(labels);
     for (int column = 0; column < ColumnCount; ++column) {
         for (int row = 0; row < RowCount; ++row) {
             try {
                 QTableWidgetItem* its = new QTableWidgetItem
                 (QString::fromStdString(file[name][row][keys[column]]));
-                ui.tableWidget->setItem(row, column, its);
+                ui.tableWidgetOrder->setItem(row, column, its);
             }
-            catch(nlohmann::detail::type_error) {
+            catch (nlohmann::detail::type_error) {
                 QTableWidgetItem* its = new QTableWidgetItem
                 (QString::fromStdString(file[name][row][keys[column]].dump()));
-                ui.tableWidget->setItem(row, column, its);
+                ui.tableWidgetOrder->setItem(row, column, its);
             }
-            
+
         }
     }
     fileInput.close();
+}
+void CStore::fillTovarTable(std::string name, std::vector<std::string> keys, QStringList labels)
+{
+        std::fstream fileInput;
+        using json = nlohmann::json;
+        json file;
+        fileInput.open("data/data.json");
+        fileInput >> file;
+        int ColumnCount = file[name][0].size();
+        int RowCount = file[name].size();
+        ui.tableWidgetTovar->setColumnCount(ColumnCount);
+        ui.tableWidgetTovar->setRowCount(RowCount);
+        ui.tableWidgetTovar->setHorizontalHeaderLabels(labels);
+        for (int column = 0; column < ColumnCount; ++column) {
+            for (int row = 0; row < RowCount; ++row) {
+                try {
+                    QTableWidgetItem* its = new QTableWidgetItem
+                    (QString::fromStdString(file[name][row][keys[column]]));
+                    ui.tableWidgetTovar->setItem(row, column, its);
+                }
+                catch (nlohmann::detail::type_error) {
+                    QTableWidgetItem* its = new QTableWidgetItem
+                    (QString::fromStdString(file[name][row][keys[column]].dump()));
+                    ui.tableWidgetTovar->setItem(row, column, its);
+                }
+
+            }
+        }
+        fileInput.close();
     return;
 }

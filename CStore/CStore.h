@@ -19,9 +19,8 @@ private slots:
 private:
     void mouseMoveEvent(QMouseEvent* event);
     void mousePressEvent(QMouseEvent* event);
-    
-    
     QPoint mousePoint;
-    void fillTable(std::string name, std::vector<std::string> keys, QStringList labels);
+    void fillOrderTable(std::string name, std::vector<std::string> keys, QStringList labels);
+    void fillTovarTable(std::string name, std::vector<std::string> keys, QStringList labels);
     Ui::CStoreClass ui;
 };
