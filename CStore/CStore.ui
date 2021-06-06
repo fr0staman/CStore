@@ -2919,7 +2919,7 @@ background-color:black
                    <item>
                     <widget class="QStackedWidget" name="stackedWidget">
                      <property name="currentIndex">
-                      <number>0</number>
+                      <number>3</number>
                      </property>
                      <widget class="QWidget" name="home">
                       <layout class="QVBoxLayout" name="verticalLayout_9">
@@ -3508,7 +3508,7 @@ background-color:black
                           <item>
                            <widget class="QLabel" name="label_3">
                             <property name="text">
-                             <string>большой член большие яйца</string>
+                             <string>поставте 5</string>
                             </property>
                            </widget>
                           </item>
