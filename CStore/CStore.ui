@@ -2,6 +2,9 @@
 <ui version="4.0">
  <class>CStoreClass</class>
  <widget class="QMainWindow" name="CStoreClass">
+  <property name="windowModality">
+   <enum>Qt::WindowModal</enum>
+  </property>
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -71,7 +74,7 @@ background-color: transparent
 }
 #topLogo {
 	background-color: rgb(33, 37, 43);
-	background-image: url(:/images/images/images/PyDracula.png);
+	background-image: ;
 	background-position: centered;
 	background-repeat: no-repeat;
 }
@@ -399,7 +402,7 @@ QCheckBox::indicator:hover {
 QCheckBox::indicator:checked {
     background: 3px solid rgb(52, 59, 72);
 	border: 3px solid rgb(52, 59, 72);	
-	background-image: url(:/icons/images/icons/cil-check-alt.png);
+	background-image: ;
 }
 
 /* /////////////////////////////////////////////////////////////////////////////////////////////////
@@ -533,7 +536,13 @@ Button */
 	background-color: rgb(35, 40, 49);
 	border: 2px solid rgb(43, 50, 61);
 }
-
+ #rightButtons.QPushButton:hover {
+	background-color: rgb(40, 44, 52);
+}
+#rightButtons.QPushButton:pressed {	
+	background-color: rgb(189, 147, 249);
+	color: rgb(255, 255, 255);
+}
 </string>
    </property>
    <layout class="QVBoxLayout" name="verticalLayout_8">
@@ -613,7 +622,7 @@ Button */
            <number>0</number>
           </property>
           <item>
-           <widget class="QFrame" name="topLogoInfo">
+           <widget class="QFrame" name="topLogo">
             <property name="maximumSize">
              <size>
               <width>16777215</width>
@@ -2730,22 +2739,37 @@ Button */
                 <enum>QFrame::Raised</enum>
                </property>
                <layout class="QHBoxLayout" name="horizontalLayout_2">
+                <property name="spacing">
+                 <number>5</number>
+                </property>
                 <property name="leftMargin">
-                 <number>10</number>
+                 <number>0</number>
                 </property>
                 <property name="topMargin">
-                 <number>10</number>
+                 <number>1</number>
                 </property>
                 <property name="rightMargin">
-                 <number>10</number>
+                 <number>0</number>
                 </property>
                 <property name="bottomMargin">
-                 <number>10</number>
+                 <number>1</number>
                 </property>
                 <item>
                  <widget class="QPushButton" name="minimizeButton">
+                  <property name="minimumSize">
+                   <size>
+                    <width>0</width>
+                    <height>34</height>
+                   </size>
+                  </property>
                   <property name="cursor">
                    <cursorShape>PointingHandCursor</cursorShape>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">QPushButton:hover
+{
+background-color:black
+}</string>
                   </property>
                   <property name="text">
                    <string/>
@@ -2758,11 +2782,20 @@ Button */
                 </item>
                 <item>
                  <widget class="QPushButton" name="maximizeButton">
+                  <property name="minimumSize">
+                   <size>
+                    <width>0</width>
+                    <height>34</height>
+                   </size>
+                  </property>
                   <property name="cursor">
                    <cursorShape>PointingHandCursor</cursorShape>
                   </property>
                   <property name="styleSheet">
-                   <string notr="true"/>
+                   <string notr="true">QPushButton:hover
+{
+background-color:black
+}</string>
                   </property>
                   <property name="text">
                    <string/>
@@ -2775,11 +2808,20 @@ Button */
                 </item>
                 <item>
                  <widget class="QPushButton" name="closeButton">
+                  <property name="minimumSize">
+                   <size>
+                    <width>0</width>
+                    <height>34</height>
+                   </size>
+                  </property>
                   <property name="cursor">
                    <cursorShape>PointingHandCursor</cursorShape>
                   </property>
                   <property name="styleSheet">
-                   <string notr="true"/>
+                   <string notr="true">QPushButton:hover
+{
+background-color:black
+}</string>
                   </property>
                   <property name="text">
                    <string/>
@@ -2877,7 +2919,7 @@ Button */
                    <item>
                     <widget class="QStackedWidget" name="stackedWidget">
                      <property name="currentIndex">
-                      <number>0</number>
+                      <number>1</number>
                      </property>
                      <widget class="QWidget" name="home">
                       <layout class="QVBoxLayout" name="verticalLayout_9">

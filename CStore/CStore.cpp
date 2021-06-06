@@ -10,6 +10,7 @@ CStore::CStore(QWidget *parent)
 {
     ui.setupUi(this);
     setWindowFlags(Qt::FramelessWindowHint);
+    setWindowIcon(QIcon(":/CStore/icons/icon.png"));
     //ui.tableWidget->setSortingEnabled(true);
     ui.tableWidgetTovar->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
     ui.tableWidgetOrder->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
@@ -25,10 +26,27 @@ CStore::CStore(QWidget *parent)
     connect(ui.searchButton, SIGNAL(clicked()), this, SLOT(Searching()));
     connect(ui.addTovarButton, SIGNAL(clicked()), this, SLOT(AddingTovar()));
     connect(ui.searchText, SIGNAL(returnPressed()), this, SLOT(Searching()));
+    connect(ui.idText, SIGNAL(returnPressed()), this, SLOT(settingFocus()));
+    connect(ui.nameText, SIGNAL(returnPressed()), this, SLOT(settingFocus()));
+    connect(ui.priceText, SIGNAL(returnPressed()), this, SLOT(settingFocus()));
+    connect(ui.numberText, SIGNAL(returnPressed()), this, SLOT(settingFocus()));
     tovarButton();
     orderButton();
 }
 
+void CStore::settingFocus()
+{
+    if (sender()->objectName() == "idText")
+        ui.nameText->setFocus();
+    else if (sender()->objectName() == "nameText")
+        ui.priceText->setFocus();
+    else if (sender()->objectName() == "priceText")
+        ui.numberText->setFocus();
+    else if (sender()->objectName() == "numberText") {
+        AddingTovar();
+        ui.idText->setFocus();
+    }
+}
 void CStore::AddingTovar()
 {
     if (ui.idText->text() != "" && ui.nameText->text() != "" && ui.priceText->text() != "" && ui.numberText->text() != "")
@@ -87,16 +105,37 @@ void CStore::Searching()
 }
 void CStore::setsIndex()
 {
-    if (sender()->objectName() == "btn_home")
+    if (sender()->objectName() == "btn_home") {
         ui.stackedWidget->setCurrentIndex(0);
-    else if (sender()->objectName() == "btn_stats")
+        ui.btn_home->setStyleSheet("background-color: rgb(40, 44, 52);");
+        ui.btn_stats->setStyleSheet("background-color: transparent;");
+        ui.btn_edit->setStyleSheet("background-color: transparent;");
+        ui.btn_right->setStyleSheet("background-color: transparent;");
+    }
+    else if (sender()->objectName() == "btn_stats") {
         ui.stackedWidget->setCurrentIndex(1);
-    else if (sender()->objectName() == "btn_edit")
+        ui.btn_stats->setStyleSheet("background-color: rgb(40, 44, 52);");
+        ui.btn_home->setStyleSheet("background-color: transparent;");
+        ui.btn_edit->setStyleSheet("background-color: transparent;");
+        ui.btn_right->setStyleSheet("background-color: transparent;");
+    }
+    else if (sender()->objectName() == "btn_edit") {
         ui.stackedWidget->setCurrentIndex(2);
-    else if (sender()->objectName() == "btn_right")
+        ui.btn_edit->setStyleSheet("background-color: rgb(40, 44, 52);");
+        ui.btn_home->setStyleSheet("background-color: transparent;");
+        ui.btn_stats->setStyleSheet("background-color: transparent;");
+        ui.btn_right->setStyleSheet("background-color: transparent;");
+    }
+    else if (sender()->objectName() == "btn_right") {
         ui.stackedWidget->setCurrentIndex(3);
+        ui.btn_right->setStyleSheet("background-color: rgb(40, 44, 52);");
+        ui.btn_home->setStyleSheet("background-color: transparent;");
+        ui.btn_stats->setStyleSheet("background-color: transparent;");
+        ui.btn_edit->setStyleSheet("background-color: transparent;");
+    }
     else
         ui.stackedWidget->setCurrentIndex(4);
+    
 }
 
 void CStore::mousePressEvent(QMouseEvent* event)
@@ -127,7 +166,7 @@ void CStore::Maximize()
 
 void CStore::tovarButton()
 {
-    fillTovarTable("tovar", { "id", "name", "price", "number" }, { "ID", "Name", "Price", "Number" });
+    fillTovarTable("tovar", { "id", "name", "price", "number" }, { "ID", QString::fromLocal8Bit("Артикул"), QString::fromLocal8Bit("Ціна"), QString::fromLocal8Bit("Кількість") });
 }
 
 void CStore::orderButton()

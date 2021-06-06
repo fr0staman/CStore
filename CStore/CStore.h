@@ -16,6 +16,7 @@ private slots:
     void setsIndex();
     void Searching();
     void AddingTovar();
+    void settingFocus();
 private:
     void mouseMoveEvent(QMouseEvent* event);
     void mousePressEvent(QMouseEvent* event);
