@@ -2003,7 +2003,7 @@ Button */
                   </property>
                   <property name="icon">
                    <iconset resource="CStore.qrc">
-                    <normaloff>:/CStore/icons/view.png</normaloff>:/CStore/icons/view.png</iconset>
+                    <normaloff>:/CStore/icons/journal.png</normaloff>:/CStore/icons/journal.png</iconset>
                   </property>
                   <property name="iconSize">
                    <size>
@@ -2877,7 +2877,7 @@ Button */
                    <item>
                     <widget class="QStackedWidget" name="stackedWidget">
                      <property name="currentIndex">
-                      <number>1</number>
+                      <number>0</number>
                      </property>
                      <widget class="QWidget" name="home">
                       <layout class="QVBoxLayout" name="verticalLayout_9">
