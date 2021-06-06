@@ -17,6 +17,7 @@ private slots:
     void Searching();
     void AddingTovar();
     void settingFocus();
+    void setDateText();
 private:
     void mouseMoveEvent(QMouseEvent* event);
     void mousePressEvent(QMouseEvent* event);

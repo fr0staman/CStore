@@ -4,6 +4,7 @@
 #include <QMessageBox>
 #include <QMouseEvent>
 #include <QDebug>
+#include <QDateTime>
 
 CStore::CStore(QWidget *parent)
     : QMainWindow(parent)
@@ -33,6 +34,14 @@ CStore::CStore(QWidget *parent)
     orderButton();
     ui.tableWidgetTovar->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
     ui.tableWidgetOrder->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
+    setDateText();
+}
+
+void CStore::setDateText()
+{
+    QDateTime cur = QDateTime::currentDateTime();
+    ui.dateText->setText(cur.toString(Qt::ISODate));
+    ui.dateText->setDisabled(true);
 }
 
 void CStore::settingFocus()
