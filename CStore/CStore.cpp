@@ -140,7 +140,13 @@ void CStore::setsIndex()
 
 void CStore::mousePressEvent(QMouseEvent* event)
 {
-    mousePoint = event->globalPos();
+    if (event->y() < 50) {
+        mousePoint = event->globalPos();
+        if (isMaximized() == true) {
+            ui.maximizeButton->setIcon(QIcon(":/CStore/icons/smallWindows.png"));
+            showNormal();
+        }
+    }
 }
 
 void CStore::mouseMoveEvent(QMouseEvent *event)
@@ -171,7 +177,7 @@ void CStore::tovarButton()
 
 void CStore::orderButton()
 {
-    fillOrderTable("order", { "id", "id_tovar", "count", "date" }, { "ID", "TovarID", "Count", "Date" });
+    fillOrderTable("order", { "id", "id_tovar", "count", "date" }, { "ID", QString::fromLocal8Bit("Товар"), QString::fromLocal8Bit("Кількість"), QString::fromLocal8Bit("Дата") });
 }
 
 

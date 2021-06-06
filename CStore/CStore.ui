@@ -3,7 +3,7 @@
  <class>CStoreClass</class>
  <widget class="QMainWindow" name="CStoreClass">
   <property name="windowModality">
-   <enum>Qt::WindowModal</enum>
+   <enum>Qt::NonModal</enum>
   </property>
   <property name="geometry">
    <rect>
@@ -2728,7 +2728,7 @@ Button */
               <widget class="QFrame" name="rightButtons">
                <property name="maximumSize">
                 <size>
-                 <width>150</width>
+                 <width>140</width>
                  <height>16777215</height>
                 </size>
                </property>
@@ -2740,7 +2740,7 @@ Button */
                </property>
                <layout class="QHBoxLayout" name="horizontalLayout_2">
                 <property name="spacing">
-                 <number>5</number>
+                 <number>0</number>
                 </property>
                 <property name="leftMargin">
                  <number>0</number>
@@ -2919,7 +2919,7 @@ background-color:black
                    <item>
                     <widget class="QStackedWidget" name="stackedWidget">
                      <property name="currentIndex">
-                      <number>1</number>
+                      <number>0</number>
                      </property>
                      <widget class="QWidget" name="home">
                       <layout class="QVBoxLayout" name="verticalLayout_9">
@@ -2932,6 +2932,18 @@ background-color:black
                           <enum>QFrame::Raised</enum>
                          </property>
                          <layout class="QVBoxLayout" name="verticalLayout_16">
+                          <property name="leftMargin">
+                           <number>0</number>
+                          </property>
+                          <property name="topMargin">
+                           <number>0</number>
+                          </property>
+                          <property name="rightMargin">
+                           <number>0</number>
+                          </property>
+                          <property name="bottomMargin">
+                           <number>0</number>
+                          </property>
                           <item>
                            <widget class="QTableWidget" name="tableWidgetOrder">
                             <property name="frameShape">
@@ -3269,11 +3281,11 @@ background-color:black
                                <property name="maximumSize">
                                 <size>
                                  <width>190</width>
-                                 <height>50</height>
+                                 <height>43</height>
                                 </size>
                                </property>
                                <property name="text">
-                                <string>ID</string>
+                                <string> ID</string>
                                </property>
                               </widget>
                              </item>
@@ -3282,7 +3294,7 @@ background-color:black
                                <property name="minimumSize">
                                 <size>
                                  <width>190</width>
-                                 <height>0</height>
+                                 <height>30</height>
                                 </size>
                                </property>
                                <property name="maximumSize">
@@ -3311,7 +3323,7 @@ background-color:black
                                 </size>
                                </property>
                                <property name="text">
-                                <string>Назва</string>
+                                <string> Назва</string>
                                </property>
                               </widget>
                              </item>
@@ -3320,7 +3332,7 @@ background-color:black
                                <property name="minimumSize">
                                 <size>
                                  <width>190</width>
-                                 <height>0</height>
+                                 <height>30</height>
                                 </size>
                                </property>
                                <property name="maximumSize">
@@ -3349,7 +3361,7 @@ background-color:black
                                 </size>
                                </property>
                                <property name="text">
-                                <string>Ціна</string>
+                                <string> Ціна</string>
                                </property>
                               </widget>
                              </item>
@@ -3358,7 +3370,7 @@ background-color:black
                                <property name="minimumSize">
                                 <size>
                                  <width>190</width>
-                                 <height>0</height>
+                                 <height>30</height>
                                 </size>
                                </property>
                                <property name="maximumSize">
@@ -3374,6 +3386,12 @@ background-color:black
                              </item>
                              <item>
                               <widget class="QLabel" name="label_7">
+                               <property name="minimumSize">
+                                <size>
+                                 <width>190</width>
+                                 <height>0</height>
+                                </size>
+                               </property>
                                <property name="maximumSize">
                                 <size>
                                  <width>190</width>
@@ -3381,12 +3399,18 @@ background-color:black
                                 </size>
                                </property>
                                <property name="text">
-                                <string>Кількість</string>
+                                <string> Кількість</string>
                                </property>
                               </widget>
                              </item>
                              <item>
                               <widget class="QLineEdit" name="numberText">
+                               <property name="minimumSize">
+                                <size>
+                                 <width>190</width>
+                                 <height>30</height>
+                                </size>
+                               </property>
                                <property name="maximumSize">
                                 <size>
                                  <width>190</width>
