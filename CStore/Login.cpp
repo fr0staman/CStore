@@ -6,6 +6,8 @@ Login::Login(QWidget *parent)
 	: QWidget(parent)
 {
 	ui.setupUi(this);
+	setWindowFlags(Qt::FramelessWindowHint);
+	setWindowIcon(QIcon(":/CStore/icons/icon.png"));
 	connect(ui.pushButtonLogin, SIGNAL(released()), this, SLOT(checkLogin()));
 	connect(ui.lineLogin, SIGNAL(returnPressed()), this, SLOT(setFocusPass()));
 	connect(ui.linePass, SIGNAL(returnPressed()), this, SLOT(checkLogin()));

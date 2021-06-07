@@ -2966,7 +2966,7 @@ background-color:black
                    <item>
                     <widget class="QStackedWidget" name="stackedWidget">
                      <property name="currentIndex">
-                      <number>0</number>
+                      <number>1</number>
                      </property>
                      <widget class="QWidget" name="home">
                       <layout class="QVBoxLayout" name="verticalLayout_9">
@@ -3143,7 +3143,7 @@ background-color:black
                                  </widget>
                                 </item>
                                 <item>
-                                 <widget class="QLineEdit" name="idText_2">
+                                 <widget class="QLineEdit" name="idTextOrder">
                                   <property name="minimumSize">
                                    <size>
                                     <width>190</width>
@@ -3181,7 +3181,7 @@ background-color:black
                                  </widget>
                                 </item>
                                 <item>
-                                 <widget class="QLineEdit" name="nameText_2">
+                                 <widget class="QLineEdit" name="idTovarText">
                                   <property name="minimumSize">
                                    <size>
                                     <width>190</width>
@@ -3219,7 +3219,7 @@ background-color:black
                                  </widget>
                                 </item>
                                 <item>
-                                 <widget class="QLineEdit" name="priceText_2">
+                                 <widget class="QLineEdit" name="numberOrderText">
                                   <property name="minimumSize">
                                    <size>
                                     <width>190</width>
@@ -3295,7 +3295,7 @@ background-color:black
                                  </widget>
                                 </item>
                                 <item>
-                                 <widget class="QPushButton" name="addTovarButton_2">
+                                 <widget class="QPushButton" name="addOrderButton">
                                   <property name="minimumSize">
                                    <size>
                                     <width>190</width>
@@ -3946,7 +3946,7 @@ background-color:black
                            </widget>
                           </item>
                           <item>
-                           <widget class="QTableWidget" name="tableWidgetTovar_3">
+                           <widget class="QTableWidget" name="tableWidgetJournal">
                             <property name="frameShape">
                              <enum>QFrame::NoFrame</enum>
                             </property>

@@ -24,14 +24,19 @@ CStore::CStore(QWidget *parent)
     connect(ui.btn_stats, SIGNAL(clicked()), this, SLOT(setsIndex()));
     connect(ui.btn_right, SIGNAL(clicked()), this, SLOT(setsIndex()));
     connect(ui.searchButton, SIGNAL(clicked()), this, SLOT(Searching()));
-    connect(ui.addTovarButton, SIGNAL(clicked()), this, SLOT(AddingTovar()));
+    connect(ui.addTovarButton, SIGNAL(clicked()), this, SLOT(addingTovar()));
+    connect(ui.addOrderButton, SIGNAL(clicked()), this, SLOT(addingOrder()));
     connect(ui.searchText, SIGNAL(returnPressed()), this, SLOT(Searching()));
     connect(ui.idText, SIGNAL(returnPressed()), this, SLOT(settingFocus()));
     connect(ui.nameText, SIGNAL(returnPressed()), this, SLOT(settingFocus()));
     connect(ui.priceText, SIGNAL(returnPressed()), this, SLOT(settingFocus()));
     connect(ui.numberText, SIGNAL(returnPressed()), this, SLOT(settingFocus()));
+    connect(ui.idTextOrder, SIGNAL(returnPressed()), this, SLOT(settingFocus()));
+    connect(ui.idTovarText, SIGNAL(returnPressed()), this, SLOT(settingFocus()));
+    connect(ui.numberOrderText, SIGNAL(returnPressed()), this, SLOT(settingFocus()));
     tovarButton();
     orderButton();
+    journalButton();
     ui.tableWidgetTovar->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
     ui.tableWidgetOrder->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
     setDateText();
@@ -40,7 +45,7 @@ CStore::CStore(QWidget *parent)
 void CStore::setDateText()
 {
     QDateTime cur = QDateTime::currentDateTime();
-    ui.dateText->setText(cur.toString(Qt::ISODate));
+    ui.dateText->setText(cur.toString("yyyy-MM-dd HH:mm:ss"));
     ui.dateText->setDisabled(true);
 }
 
@@ -53,11 +58,55 @@ void CStore::settingFocus()
     else if (sender()->objectName() == "priceText")
         ui.numberText->setFocus();
     else if (sender()->objectName() == "numberText") {
-        AddingTovar();
+        ui.addTovarButton->click();
         ui.idText->setFocus();
     }
+    else if (sender()->objectName() == "idTextOrder")
+        ui.idTovarText->setFocus();
+    else if (sender()->objectName() == "idTovarText")
+        ui.numberOrderText->setFocus();
+    else if (sender()->objectName() == "numberOrderText") {
+        ui.addOrderButton->click();
+        ui.idTextOrder->setFocus();
+    }
 }
-void CStore::AddingTovar()
+
+void CStore::addingJournal()
+{
+
+}
+void CStore::addingOrder()
+{
+    if (ui.idTovarText->text() != "" && ui.numberOrderText->text() != "" && ui.idTextOrder->text() != "")
+    {
+        std::fstream fileInput;
+        using json = nlohmann::json;
+        json file;
+        fileInput.open("data/data.json");
+        fileInput >> file;
+        ui.idText->text().toInt();
+        setDateText();
+        json user_info = json::object({
+            { "id", ui.idTextOrder->text().toInt() },
+            { "id_tovar", ui.idTovarText->text().toInt() },
+            { "count", ui.numberOrderText->text().toInt() },
+            { "date", ui.dateText->text().toStdString() }
+            });
+        std::ofstream fileOutput;
+        fileOutput.open("data/data.json");
+        file["order"].push_back(user_info);
+        fileOutput << file << std::endl;
+        fileOutput.close();
+        fileInput.close();
+        orderButton();
+        ui.idTextOrder->clear();
+        ui.idTovarText->clear();
+        ui.idTextOrder->clear();
+        setDateText();
+    }
+}
+
+void CStore::addingTovar()
 {
     if (ui.idText->text() != "" && ui.nameText->text() != "" && ui.priceText->text() != "" && ui.numberText->text() != "")
     {
@@ -80,6 +129,10 @@ void CStore::AddingTovar()
         fileOutput.close();
         fileInput.close();
         tovarButton();
+        ui.idText->clear();
+        ui.nameText->clear();
+        ui.priceText->clear();
+        ui.numberText->clear();
     }
 }
 void CStore::Searching()
@@ -195,6 +248,11 @@ void CStore::Maximize()
     }
 }
 
+void CStore::journalButton()
+{
+    fillJournalTable("journal", {}, {});
+}
+
 void CStore::tovarButton()
 {
     fillTovarTable("tovar", { "id", "name", "price", "number" }, { "ID", QString::fromLocal8Bit("Артикул"), QString::fromLocal8Bit("Ціна"), QString::fromLocal8Bit("Кількість") });
@@ -205,6 +263,34 @@ void CStore::orderButton()
     fillOrderTable("order", { "id", "id_tovar", "count", "date" }, { "ID", QString::fromLocal8Bit("Товар"), QString::fromLocal8Bit("Кількість"), QString::fromLocal8Bit("Дата") });
 }
 
+void CStore::fillJournalTable(std::string name, std::vector<std::string> keys, QStringList labels)
+{
+    std::fstream fileInput;
+    using json = nlohmann::json;
+    json file;
+    fileInput.open("data/data.json");
+    fileInput >> file;
+    int ColumnCount = file[name][0].size();
+    int RowCount = file[name].size();
+    ui.tableWidgetJournal->setColumnCount(ColumnCount);
+    ui.tableWidgetJournal->setRowCount(RowCount);
+    ui.tableWidgetJournal->setHorizontalHeaderLabels(labels);
+    for (int column = 0; column < ColumnCount; ++column) {
+        for (int row = 0; row < RowCount; ++row) {
+            try {
+                QTableWidgetItem* its = new QTableWidgetItem
+                (QString::fromStdString(file[name][row][keys[column]]));
+                ui.tableWidgetJournal->setItem(row, column, its);
+            }
+            catch (nlohmann::detail::type_error) {
+                QTableWidgetItem* its = new QTableWidgetItem
+                (QString::fromStdString(file[name][row][keys[column]].dump()));
+                ui.tableWidgetJournal->setItem(row, column, its);
+            }
+        }
+    }
+    fileInput.close();
+}
 
 void CStore::fillOrderTable(std::string name, std::vector<std::string> keys, QStringList labels)
 {
@@ -259,7 +345,6 @@ void CStore::fillTovarTable(std::string name, std::vector<std::string> keys, QSt
                     (QString::fromStdString(file[name][row][keys[column]].dump()));
                     ui.tableWidgetTovar->setItem(row, column, its);
                 }
-
             }
         }
         fileInput.close();
