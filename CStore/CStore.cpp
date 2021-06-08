@@ -7,10 +7,10 @@
 #include <QDateTime>
 
 CStore::CStore(QWidget *parent)
-    : QMainWindow(parent)
+    : QMainWindow(parent, Qt::FramelessWindowHint)
 {
     ui.setupUi(this);
-    setWindowFlags(Qt::FramelessWindowHint);
+    //setWindowFlags(Qt::FramelessWindowHint);
     setWindowIcon(QIcon(":/CStore/icons/icon.png"));
     //ui.tableWidget->setSortingEnabled(true);
     

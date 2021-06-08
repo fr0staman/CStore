@@ -21,9 +21,9 @@ private slots:
     void setDateText();
     void addingOrder();
 private:
+    QPoint mousePoint;
     void mouseMoveEvent(QMouseEvent* event);
     void mousePressEvent(QMouseEvent* event);
-    QPoint mousePoint;
     void addingJournal();
     void fillJournalTable(std::string name, std::vector<std::string> keys, QStringList labels);
     void fillOrderTable(std::string name, std::vector<std::string> keys, QStringList labels);

@@ -6,35 +6,17 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>514</width>
-    <height>556</height>
+    <width>400</width>
+    <height>480</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Form</string>
+   <string>Login</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">QWidget
-{
-background-color: transparent;
-}
-QPushButton:hover{
-  background-color:rgb(42, 77, 159);
-  color: white;
-  border-radius:15px;
-}
+   <string notr="true">background-color: transparent;
 
-QPushButton:pressed{
-  background-color:rgb(64, 118, 243);
-  color: white;
-  border-radius:15px;
-}
-
-QPushButton{
-background-color:#3867d6;
-color: white;
-border-radius:15px;
-}</string>
+</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <property name="leftMargin">
@@ -53,80 +35,137 @@ border-radius:15px;
     <widget class="QWidget" name="widget" native="true">
      <property name="styleSheet">
       <string notr="true">border-radius:20px;
-background-color: rgb(40, 44, 52);</string>
+background-color:  rgb(40, 44, 52);</string>
      </property>
-     <widget class="QLineEdit" name="lineLogin">
-      <property name="geometry">
-       <rect>
-        <x>70</x>
-        <y>250</y>
-        <width>351</width>
-        <height>61</height>
-       </rect>
+     <layout class="QVBoxLayout" name="verticalLayout_2">
+      <property name="spacing">
+       <number>10</number>
       </property>
-      <property name="font">
-       <font>
-        <pointsize>15</pointsize>
-       </font>
+      <property name="leftMargin">
+       <number>25</number>
       </property>
-      <property name="styleSheet">
-       <string notr="true">border-radius:17px;
+      <property name="rightMargin">
+       <number>25</number>
+      </property>
+      <item>
+       <widget class="QLabel" name="logo">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="MinimumExpanding" vsizetype="Preferred">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>150</width>
+          <height>120</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>150</width>
+          <height>120</height>
+         </size>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="pixmap">
+         <pixmap>:/images/images/Logo.svg</pixmap>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pushButton">
+        <property name="text">
+         <string/>
+        </property>
+        <property name="icon">
+         <iconset resource="Login.qrc">
+          <normaloff>:/icon/icons/icon.png</normaloff>:/icon/icons/icon.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>120</width>
+          <height>40</height>
+         </size>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="lineLogin">
+        <property name="minimumSize">
+         <size>
+          <width>100</width>
+          <height>60</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>15</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border-radius:17px;
 background-color:#F5F5F5;
 padding-left:25px;
 color:#616161;
 </string>
-      </property>
-      <property name="placeholderText">
-       <string>Логін</string>
-      </property>
-     </widget>
-     <widget class="QLineEdit" name="linePass">
-      <property name="geometry">
-       <rect>
-        <x>70</x>
-        <y>350</y>
-        <width>351</width>
-        <height>61</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <pointsize>15</pointsize>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">border-radius:17px;
+        </property>
+        <property name="inputMethodHints">
+         <set>Qt::ImhFormattedNumbersOnly</set>
+        </property>
+        <property name="placeholderText">
+         <string>Логін</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="linePass">
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>60</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>15</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border-radius:17px;
 background-color:#F5F5F5;
 padding-left:25px;
 color:#616161</string>
-      </property>
-      <property name="echoMode">
-       <enum>QLineEdit::Password</enum>
-      </property>
-      <property name="placeholderText">
-       <string>Пароль</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="pushButtonLogin">
-      <property name="geometry">
-       <rect>
-        <x>80</x>
-        <y>440</y>
-        <width>331</width>
-        <height>55</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <pointsize>15</pointsize>
-        <bold>true</bold>
-       </font>
-      </property>
-      <property name="cursor">
-       <cursorShape>PointingHandCursor</cursorShape>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QPushButton:hover{
+        </property>
+        <property name="echoMode">
+         <enum>QLineEdit::Password</enum>
+        </property>
+        <property name="placeholderText">
+         <string>Пароль</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pushButtonLogin">
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>60</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>15</pointsize>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="cursor">
+         <cursorShape>PointingHandCursor</cursorShape>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton:hover{
   background-color:rgb(42, 77, 159);
   color: white;
   border-radius:15px;
@@ -143,51 +182,24 @@ background-color:red;
 color: white;
 border-radius:15px;
 }</string>
-      </property>
-      <property name="text">
-       <string>Увійти</string>
-      </property>
-     </widget>
-     <widget class="QLabel" name="logo">
-      <property name="geometry">
-       <rect>
-        <x>170</x>
-        <y>90</y>
-        <width>150</width>
-        <height>120</height>
-       </rect>
-      </property>
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="MinimumExpanding" vsizetype="Preferred">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="minimumSize">
-       <size>
-        <width>150</width>
-        <height>120</height>
-       </size>
-      </property>
-      <property name="maximumSize">
-       <size>
-        <width>150</width>
-        <height>120</height>
-       </size>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-      <property name="pixmap">
-       <pixmap>:/images/images/Logo.svg</pixmap>
-      </property>
-     </widget>
+        </property>
+        <property name="text">
+         <string>Увійти</string>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>16</width>
+          <height>16</height>
+         </size>
+        </property>
+       </widget>
+      </item>
+     </layout>
     </widget>
    </item>
   </layout>
  </widget>
  <resources>
-  <include location="Login.qrc"/>
   <include location="Login.qrc"/>
  </resources>
  <connections/>

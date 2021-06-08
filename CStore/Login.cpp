@@ -3,10 +3,10 @@
 #include <QMessageBox>
 
 Login::Login(QWidget *parent)
-	: QWidget(parent)
+	: QWidget(parent, Qt::FramelessWindowHint)
 {
 	ui.setupUi(this);
-	setWindowFlags(Qt::FramelessWindowHint);
+	this->setAttribute(Qt::WA_TranslucentBackground);
 	setWindowIcon(QIcon(":/CStore/icons/icon.png"));
 	connect(ui.pushButtonLogin, SIGNAL(released()), this, SLOT(checkLogin()));
 	connect(ui.lineLogin, SIGNAL(returnPressed()), this, SLOT(setFocusPass()));
