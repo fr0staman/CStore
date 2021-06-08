@@ -21,8 +21,8 @@
   </property>
   <property name="iconSize">
    <size>
-    <width>32</width>
-    <height>32</height>
+    <width>64</width>
+    <height>64</height>
    </size>
   </property>
   <widget class="QWidget" name="styleSheet">
@@ -672,8 +672,8 @@ Button */
                </property>
                <property name="iconSize">
                 <size>
-                 <width>48</width>
-                 <height>32</height>
+                 <width>56</width>
+                 <height>48</height>
                 </size>
                </property>
               </widget>
@@ -1329,7 +1329,7 @@ Button */
                   <property name="minimumSize">
                    <size>
                     <width>0</width>
-                    <height>60</height>
+                    <height>90</height>
                    </size>
                   </property>
                   <property name="palette">
@@ -1916,7 +1916,7 @@ Button */
                    <enum>Qt::LeftToRight</enum>
                   </property>
                   <property name="autoFillBackground">
-                   <bool>true</bool>
+                   <bool>false</bool>
                   </property>
                   <property name="styleSheet">
                    <string notr="true"/>
@@ -1953,7 +1953,7 @@ Button */
                   <property name="minimumSize">
                    <size>
                     <width>0</width>
-                    <height>60</height>
+                    <height>90</height>
                    </size>
                   </property>
                   <property name="cursor">
@@ -1988,14 +1988,14 @@ Button */
                   <property name="minimumSize">
                    <size>
                     <width>0</width>
-                    <height>60</height>
+                    <height>90</height>
                    </size>
                   </property>
                   <property name="cursor">
                    <cursorShape>PointingHandCursor</cursorShape>
                   </property>
                   <property name="styleSheet">
-                   <string notr="true">text-align:center;</string>
+                   <string notr="true"/>
                   </property>
                   <property name="text">
                    <string/>
@@ -2006,8 +2006,8 @@ Button */
                   </property>
                   <property name="iconSize">
                    <size>
-                    <width>48</width>
-                    <height>48</height>
+                    <width>32</width>
+                    <height>32</height>
                    </size>
                   </property>
                  </widget>
@@ -2017,7 +2017,7 @@ Button */
                   <property name="minimumSize">
                    <size>
                     <width>0</width>
-                    <height>60</height>
+                    <height>90</height>
                    </size>
                   </property>
                   <property name="cursor">
