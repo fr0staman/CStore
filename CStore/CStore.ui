@@ -84,12 +84,12 @@ background-color: transparent
 
 /* MENUS */
 #topMenu .QPushButton {	
-	background-position: left center;
+	/*background-position: left center;*/
     background-repeat: no-repeat;
 	border: none;
-	border-left: 22px solid transparent;
+	/*border-left: 22px solid transparent;*/
 	background-color: transparent;
-	text-align: left;
+	text-align: center;
 	/*padding-left: 44px;*/
 }
 #topMenu .QPushButton:hover {
@@ -1930,8 +1930,8 @@ Button */
                   </property>
                   <property name="iconSize">
                    <size>
-                    <width>32</width>
-                    <height>32</height>
+                    <width>50</width>
+                    <height>50</height>
                    </size>
                   </property>
                   <property name="shortcut">
@@ -1971,8 +1971,8 @@ Button */
                   </property>
                   <property name="iconSize">
                    <size>
-                    <width>32</width>
-                    <height>32</height>
+                    <width>50</width>
+                    <height>50</height>
                    </size>
                   </property>
                  </widget>
@@ -2006,8 +2006,8 @@ Button */
                   </property>
                   <property name="iconSize">
                    <size>
-                    <width>32</width>
-                    <height>32</height>
+                    <width>50</width>
+                    <height>50</height>
                    </size>
                   </property>
                  </widget>
@@ -2035,8 +2035,8 @@ Button */
                   </property>
                   <property name="iconSize">
                    <size>
-                    <width>32</width>
-                    <height>32</height>
+                    <width>50</width>
+                    <height>50</height>
                    </size>
                   </property>
                  </widget>
