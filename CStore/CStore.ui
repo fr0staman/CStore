@@ -3192,13 +3192,13 @@ background-color:black
                                   <property name="minimumSize">
                                    <size>
                                     <width>190</width>
-                                    <height>30</height>
+                                    <height>40</height>
                                    </size>
                                   </property>
                                   <property name="maximumSize">
                                    <size>
                                     <width>190</width>
-                                    <height>16777215</height>
+                                    <height>40</height>
                                    </size>
                                   </property>
                                   <property name="styleSheet">
@@ -3211,13 +3211,13 @@ background-color:black
                                   <property name="minimumSize">
                                    <size>
                                     <width>190</width>
-                                    <height>0</height>
+                                    <height>40</height>
                                    </size>
                                   </property>
                                   <property name="maximumSize">
                                    <size>
                                     <width>190</width>
-                                    <height>30</height>
+                                    <height>40</height>
                                    </size>
                                   </property>
                                   <property name="text">
@@ -3230,13 +3230,13 @@ background-color:black
                                   <property name="minimumSize">
                                    <size>
                                     <width>190</width>
-                                    <height>30</height>
+                                    <height>40</height>
                                    </size>
                                   </property>
                                   <property name="maximumSize">
                                    <size>
                                     <width>190</width>
-                                    <height>16777215</height>
+                                    <height>40</height>
                                    </size>
                                   </property>
                                   <property name="styleSheet">
@@ -3249,13 +3249,13 @@ background-color:black
                                   <property name="minimumSize">
                                    <size>
                                     <width>190</width>
-                                    <height>0</height>
+                                    <height>40</height>
                                    </size>
                                   </property>
                                   <property name="maximumSize">
                                    <size>
                                     <width>190</width>
-                                    <height>30</height>
+                                    <height>40</height>
                                    </size>
                                   </property>
                                   <property name="text">
@@ -3274,7 +3274,7 @@ background-color:black
                                   <property name="maximumSize">
                                    <size>
                                     <width>190</width>
-                                    <height>16777215</height>
+                                    <height>40</height>
                                    </size>
                                   </property>
                                   <property name="styleSheet">
@@ -3287,13 +3287,13 @@ background-color:black
                                   <property name="minimumSize">
                                    <size>
                                     <width>190</width>
-                                    <height>0</height>
+                                    <height>40</height>
                                    </size>
                                   </property>
                                   <property name="maximumSize">
                                    <size>
                                     <width>190</width>
-                                    <height>30</height>
+                                    <height>40</height>
                                    </size>
                                   </property>
                                   <property name="text">
@@ -3306,13 +3306,13 @@ background-color:black
                                   <property name="minimumSize">
                                    <size>
                                     <width>190</width>
-                                    <height>30</height>
+                                    <height>40</height>
                                    </size>
                                   </property>
                                   <property name="maximumSize">
                                    <size>
                                     <width>190</width>
-                                    <height>16777215</height>
+                                    <height>40</height>
                                    </size>
                                   </property>
                                   <property name="styleSheet">
@@ -3415,7 +3415,13 @@ background-color:black
                             <property name="minimumSize">
                              <size>
                               <width>0</width>
-                              <height>50</height>
+                              <height>40</height>
+                             </size>
+                            </property>
+                            <property name="maximumSize">
+                             <size>
+                              <width>16777215</width>
+                              <height>40</height>
                              </size>
                             </property>
                             <property name="styleSheet">
@@ -3431,13 +3437,13 @@ background-color:black
                             <property name="minimumSize">
                              <size>
                               <width>130</width>
-                              <height>50</height>
+                              <height>40</height>
                              </size>
                             </property>
                             <property name="maximumSize">
                              <size>
                               <width>150</width>
-                              <height>16777215</height>
+                              <height>40</height>
                              </size>
                             </property>
                             <property name="cursor">
@@ -3449,6 +3455,12 @@ background-color:black
                             <property name="currentText">
                              <string/>
                             </property>
+                            <property name="iconSize">
+                             <size>
+                              <width>20</width>
+                              <height>20</height>
+                             </size>
+                            </property>
                             <property name="placeholderText">
                              <string>Категорії</string>
                             </property>
@@ -3459,13 +3471,13 @@ background-color:black
                             <property name="minimumSize">
                              <size>
                               <width>50</width>
-                              <height>50</height>
+                              <height>40</height>
                              </size>
                             </property>
                             <property name="maximumSize">
                              <size>
                               <width>50</width>
-                              <height>50</height>
+                              <height>40</height>
                              </size>
                             </property>
                             <property name="cursor">
@@ -3480,6 +3492,12 @@ background-color:black
                             <property name="icon">
                              <iconset resource="CStore.qrc">
                               <normaloff>:/CStore/icons/searchIcon.png</normaloff>:/CStore/icons/searchIcon.png</iconset>
+                            </property>
+                            <property name="iconSize">
+                             <size>
+                              <width>24</width>
+                              <height>24</height>
+                             </size>
                             </property>
                            </widget>
                           </item>
@@ -3668,8 +3686,8 @@ background-color:black
                                </property>
                                <property name="maximumSize">
                                 <size>
-                                 <width>160</width>
-                                 <height>16777215</height>
+                                 <width>190</width>
+                                 <height>40</height>
                                 </size>
                                </property>
                                <property name="styleSheet">
@@ -3707,7 +3725,7 @@ background-color:black
                                <property name="maximumSize">
                                 <size>
                                  <width>190</width>
-                                 <height>16777215</height>
+                                 <height>40</height>
                                 </size>
                                </property>
                                <property name="styleSheet">
@@ -3745,7 +3763,7 @@ background-color:black
                                <property name="maximumSize">
                                 <size>
                                  <width>190</width>
-                                 <height>16777215</height>
+                                 <height>40</height>
                                 </size>
                                </property>
                                <property name="styleSheet">
@@ -3783,7 +3801,7 @@ background-color:black
                                <property name="maximumSize">
                                 <size>
                                  <width>190</width>
-                                 <height>16777215</height>
+                                 <height>40</height>
                                 </size>
                                </property>
                                <property name="styleSheet">
@@ -4118,7 +4136,4 @@ background-color:black
   <include location="CStore.qrc"/>
  </resources>
  <connections/>
- <slots>
-  <slot>TestClick()</slot>
- </slots>
 </ui>
