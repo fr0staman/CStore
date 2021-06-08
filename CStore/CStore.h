@@ -18,13 +18,13 @@ private slots:
     void Searching();
     void addingTovar();
     void settingFocus();
-    void setDateText();
+    std::string setDateText();
     void addingOrder();
 private:
     QPoint mousePoint;
     void mouseMoveEvent(QMouseEvent* event);
     void mousePressEvent(QMouseEvent* event);
-    void addingJournal();
+    void addingJournal(int id, std::string oper, std::string date);
     void fillJournalTable(std::string name, std::vector<std::string> keys, QStringList labels);
     void fillOrderTable(std::string name, std::vector<std::string> keys, QStringList labels);
     void fillTovarTable(std::string name, std::vector<std::string> keys, QStringList labels);

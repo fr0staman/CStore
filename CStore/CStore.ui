@@ -1912,6 +1912,12 @@ Button */
                   <property name="cursor">
                    <cursorShape>PointingHandCursor</cursorShape>
                   </property>
+                  <property name="layoutDirection">
+                   <enum>Qt::LeftToRight</enum>
+                  </property>
+                  <property name="autoFillBackground">
+                   <bool>true</bool>
+                  </property>
                   <property name="styleSheet">
                    <string notr="true"/>
                   </property>
@@ -1927,6 +1933,18 @@ Button */
                     <width>32</width>
                     <height>32</height>
                    </size>
+                  </property>
+                  <property name="shortcut">
+                   <string/>
+                  </property>
+                  <property name="autoDefault">
+                   <bool>false</bool>
+                  </property>
+                  <property name="default">
+                   <bool>false</bool>
+                  </property>
+                  <property name="flat">
+                   <bool>false</bool>
                   </property>
                  </widget>
                 </item>
@@ -1949,7 +1967,7 @@ Button */
                   </property>
                   <property name="icon">
                    <iconset resource="CStore.qrc">
-                    <normaloff>:/CStore/icons/view.png</normaloff>:/CStore/icons/view.png</iconset>
+                    <normaloff>:/CStore/icons/table.png</normaloff>:/CStore/icons/table.png</iconset>
                   </property>
                   <property name="iconSize">
                    <size>
@@ -1977,19 +1995,19 @@ Button */
                    <cursorShape>PointingHandCursor</cursorShape>
                   </property>
                   <property name="styleSheet">
-                   <string notr="true"/>
+                   <string notr="true">text-align:center;</string>
                   </property>
                   <property name="text">
                    <string/>
                   </property>
                   <property name="icon">
                    <iconset resource="CStore.qrc">
-                    <normaloff>:/CStore/icons/view.png</normaloff>:/CStore/icons/view.png</iconset>
+                    <normaloff>:/CStore/icons/table.png</normaloff>:/CStore/icons/table.png</iconset>
                   </property>
                   <property name="iconSize">
                    <size>
-                    <width>32</width>
-                    <height>32</height>
+                    <width>48</width>
+                    <height>48</height>
                    </size>
                   </property>
                  </widget>
@@ -2967,7 +2985,7 @@ background-color:black
                    <item>
                     <widget class="QStackedWidget" name="stackedWidget">
                      <property name="currentIndex">
-                      <number>1</number>
+                      <number>2</number>
                      </property>
                      <widget class="QWidget" name="home">
                       <layout class="QVBoxLayout" name="verticalLayout_9">
@@ -3939,13 +3957,6 @@ background-color:black
                           <property name="bottomMargin">
                            <number>9</number>
                           </property>
-                          <item>
-                           <widget class="QLabel" name="label_3">
-                            <property name="text">
-                             <string>поставте 5</string>
-                            </property>
-                           </widget>
-                          </item>
                           <item>
                            <widget class="QTableWidget" name="tableWidgetJournal">
                             <property name="frameShape">

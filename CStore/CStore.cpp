@@ -39,14 +39,16 @@ CStore::CStore(QWidget *parent)
     journalButton();
     ui.tableWidgetTovar->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
     ui.tableWidgetOrder->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
+    ui.tableWidgetJournal->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
     setDateText();
 }
 
-void CStore::setDateText()
+std::string CStore::setDateText()
 {
     QDateTime cur = QDateTime::currentDateTime();
     ui.dateText->setText(cur.toString("yyyy-MM-dd HH:mm:ss"));
     ui.dateText->setDisabled(true);
+    return (cur.toString("yyyy-MM-dd HH:mm:ss")).toStdString();
 }
 
 void CStore::settingFocus()
@@ -71,10 +73,29 @@ void CStore::settingFocus()
     }
 }
 
-void CStore::addingJournal()
+void CStore::addingJournal(int id, std::string oper, std::string date)
 {
-
+    std::fstream fileInput;
+    using json = nlohmann::json;
+    json file;
+    fileInput.open("data/data.json");
+    fileInput >> file;
+    ui.idText->text().toInt();
+    setDateText();
+    json user_info = json::object({
+        { "id_prc", id},
+        { "operation", oper },
+        { "date", date},
+        });
+    std::ofstream fileOutput;
+    fileOutput.open("data/data.json");
+    file["journal"].push_back(user_info);
+    fileOutput << file << std::endl;
+    fileOutput.close();
+    fileInput.close();
+    journalButton();
 }
+
 void CStore::addingOrder()
 {
     if (ui.idTovarText->text() != "" && ui.numberOrderText->text() != "" && ui.idTextOrder->text() != "")
@@ -103,6 +124,7 @@ void CStore::addingOrder()
         ui.idTovarText->clear();
         ui.idTextOrder->clear();
         setDateText();
+        addingJournal(1, "Order", setDateText());
     }
 }
 
@@ -133,6 +155,7 @@ void CStore::addingTovar()
         ui.nameText->clear();
         ui.priceText->clear();
         ui.numberText->clear();
+        addingJournal(1, "Tovar", setDateText());
     }
 }
 void CStore::Searching()
@@ -250,7 +273,7 @@ void CStore::Maximize()
 
 void CStore::journalButton()
 {
-    fillJournalTable("journal", {}, {});
+    fillJournalTable("journal", { "id_prc", "operation", "date" }, { "ID", QString::fromLocal8Bit("Операція"), QString::fromLocal8Bit("Дата операції") });
 }
 
 void CStore::tovarButton()
