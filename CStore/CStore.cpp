@@ -11,7 +11,7 @@ CStore::CStore(QWidget *parent)
 {
     ui.setupUi(this);
     //setWindowFlags(Qt::FramelessWindowHint);
-    setWindowIcon(QIcon(":/CStore/icons/icon.png"));
+    setWindowIcon(QIcon(":/CStore/icons/icon_c.png"));
     //ui.tableWidget->setSortingEnabled(true);
     
     //connect(ui.tovarButton, SIGNAL(clicked()), this, SLOT(tovarButton()));

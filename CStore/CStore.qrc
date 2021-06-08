@@ -1,5 +1,6 @@
 <RCC>
   <qresource prefix="/CStore">
+    <file>icons/icon_c.png</file>
     <file>icons/table.png</file>
     <file>icons/journal.png</file>
     <file>icons/icon.png</file>

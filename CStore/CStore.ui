@@ -31,7 +31,7 @@
 
 QWidget{
 	color: rgb(221, 221, 221);
-	font: 10pt &quot;Segoe UI&quot;;
+	font: 14pt &quot;Segoe UI&quot;;
 }
 
 /* /////////////////////////////////////////////////////////////////////////////////////////////////
@@ -257,6 +257,7 @@ QHeaderView::section{
 }
 QTableWidget::horizontalHeader {	
 	background-color: rgb(33, 37, 43);
+	font-weight:bold;
 }
 QHeaderView::section:horizontal
 {
@@ -672,8 +673,8 @@ Button */
                </property>
                <property name="iconSize">
                 <size>
-                 <width>56</width>
-                 <height>48</height>
+                 <width>60</width>
+                 <height>25</height>
                 </size>
                </property>
               </widget>
@@ -2739,7 +2740,7 @@ Button */
                   </property>
                   <property name="font">
                    <font>
-                    <pointsize>10</pointsize>
+                    <pointsize>14</pointsize>
                     <italic>false</italic>
                     <bold>false</bold>
                    </font>
@@ -2756,15 +2757,22 @@ Button */
                  <widget class="QLabel" name="rightLabel">
                   <property name="minimumSize">
                    <size>
-                    <width>200</width>
+                    <width>330</width>
                     <height>0</height>
                    </size>
                   </property>
                   <property name="maximumSize">
                    <size>
-                    <width>220</width>
+                    <width>330</width>
                     <height>16777215</height>
                    </size>
+                  </property>
+                  <property name="font">
+                   <font>
+                    <pointsize>14</pointsize>
+                    <italic>false</italic>
+                    <bold>false</bold>
+                   </font>
                   </property>
                   <property name="styleSheet">
                    <string notr="true">border-top: 5px solid qlineargradient(spread:pad, x1:0.034, y1:0, x2:2, y2:0, stop:0.499 rgba(255, 121, 198, 255), stop:0.5 rgba(85, 170, 255, 0));
@@ -2844,6 +2852,12 @@ background-color:black
                    <iconset resource="CStore.qrc">
                     <normaloff>:/CStore/icons/minWindows.png</normaloff>:/CStore/icons/minWindows.png</iconset>
                   </property>
+                  <property name="iconSize">
+                   <size>
+                    <width>20</width>
+                    <height>20</height>
+                   </size>
+                  </property>
                  </widget>
                 </item>
                 <item>
@@ -2870,6 +2884,12 @@ background-color:black
                    <iconset resource="CStore.qrc">
                     <normaloff>:/CStore/icons/smallWindows.png</normaloff>:/CStore/icons/smallWindows.png</iconset>
                   </property>
+                  <property name="iconSize">
+                   <size>
+                    <width>20</width>
+                    <height>20</height>
+                   </size>
+                  </property>
                  </widget>
                 </item>
                 <item>
@@ -2895,6 +2915,12 @@ background-color:black
                   <property name="icon">
                    <iconset resource="CStore.qrc">
                     <normaloff>:/CStore/icons/closeWindow.png</normaloff>:/CStore/icons/closeWindow.png</iconset>
+                  </property>
+                  <property name="iconSize">
+                   <size>
+                    <width>20</width>
+                    <height>20</height>
+                   </size>
                   </property>
                  </widget>
                 </item>
@@ -2985,7 +3011,7 @@ background-color:black
                    <item>
                     <widget class="QStackedWidget" name="stackedWidget">
                      <property name="currentIndex">
-                      <number>2</number>
+                      <number>1</number>
                      </property>
                      <widget class="QWidget" name="home">
                       <layout class="QVBoxLayout" name="verticalLayout_9">
@@ -3350,10 +3376,16 @@ background-color:black
                       <layout class="QVBoxLayout" name="verticalLayout_7">
                        <item>
                         <widget class="QFrame" name="search">
+                         <property name="minimumSize">
+                          <size>
+                           <width>0</width>
+                           <height>50</height>
+                          </size>
+                         </property>
                          <property name="maximumSize">
                           <size>
                            <width>16777215</width>
-                           <height>30</height>
+                           <height>50</height>
                           </size>
                          </property>
                          <property name="frameShape">
@@ -3383,7 +3415,7 @@ background-color:black
                             <property name="minimumSize">
                              <size>
                               <width>0</width>
-                              <height>30</height>
+                              <height>50</height>
                              </size>
                             </property>
                             <property name="styleSheet">
@@ -3398,8 +3430,8 @@ background-color:black
                            <widget class="QComboBox" name="searchComboBox">
                             <property name="minimumSize">
                              <size>
-                              <width>150</width>
-                              <height>30</height>
+                              <width>130</width>
+                              <height>50</height>
                              </size>
                             </property>
                             <property name="maximumSize">
@@ -3426,18 +3458,21 @@ background-color:black
                            <widget class="QPushButton" name="searchButton">
                             <property name="minimumSize">
                              <size>
-                              <width>30</width>
-                              <height>30</height>
+                              <width>50</width>
+                              <height>50</height>
                              </size>
                             </property>
                             <property name="maximumSize">
                              <size>
-                              <width>30</width>
-                              <height>30</height>
+                              <width>50</width>
+                              <height>50</height>
                              </size>
                             </property>
                             <property name="cursor">
                              <cursorShape>PointingHandCursor</cursorShape>
+                            </property>
+                            <property name="styleSheet">
+                             <string notr="true">background-color: rgb(33, 37, 43);</string>
                             </property>
                             <property name="text">
                              <string/>
@@ -3609,13 +3644,13 @@ background-color:black
                                <property name="minimumSize">
                                 <size>
                                  <width>190</width>
-                                 <height>0</height>
+                                 <height>50</height>
                                 </size>
                                </property>
                                <property name="maximumSize">
                                 <size>
                                  <width>190</width>
-                                 <height>43</height>
+                                 <height>55</height>
                                 </size>
                                </property>
                                <property name="text">
@@ -3628,7 +3663,7 @@ background-color:black
                                <property name="minimumSize">
                                 <size>
                                  <width>190</width>
-                                 <height>30</height>
+                                 <height>40</height>
                                 </size>
                                </property>
                                <property name="maximumSize">
@@ -3647,13 +3682,13 @@ background-color:black
                                <property name="minimumSize">
                                 <size>
                                  <width>190</width>
-                                 <height>0</height>
+                                 <height>40</height>
                                 </size>
                                </property>
                                <property name="maximumSize">
                                 <size>
                                  <width>190</width>
-                                 <height>30</height>
+                                 <height>40</height>
                                 </size>
                                </property>
                                <property name="text">
@@ -3666,7 +3701,7 @@ background-color:black
                                <property name="minimumSize">
                                 <size>
                                  <width>190</width>
-                                 <height>30</height>
+                                 <height>40</height>
                                 </size>
                                </property>
                                <property name="maximumSize">
@@ -3685,13 +3720,13 @@ background-color:black
                                <property name="minimumSize">
                                 <size>
                                  <width>190</width>
-                                 <height>0</height>
+                                 <height>40</height>
                                 </size>
                                </property>
                                <property name="maximumSize">
                                 <size>
                                  <width>190</width>
-                                 <height>30</height>
+                                 <height>40</height>
                                 </size>
                                </property>
                                <property name="text">
@@ -3704,7 +3739,7 @@ background-color:black
                                <property name="minimumSize">
                                 <size>
                                  <width>190</width>
-                                 <height>30</height>
+                                 <height>40</height>
                                 </size>
                                </property>
                                <property name="maximumSize">
@@ -3723,13 +3758,13 @@ background-color:black
                                <property name="minimumSize">
                                 <size>
                                  <width>190</width>
-                                 <height>0</height>
+                                 <height>40</height>
                                 </size>
                                </property>
                                <property name="maximumSize">
                                 <size>
                                  <width>190</width>
-                                 <height>30</height>
+                                 <height>40</height>
                                 </size>
                                </property>
                                <property name="text">
@@ -3742,7 +3777,7 @@ background-color:black
                                <property name="minimumSize">
                                 <size>
                                  <width>190</width>
-                                 <height>30</height>
+                                 <height>40</height>
                                 </size>
                                </property>
                                <property name="maximumSize">
@@ -3830,6 +3865,13 @@ background-color:black
                          <layout class="QVBoxLayout" name="verticalLayout_10">
                           <item>
                            <widget class="QLabel" name="label_2">
+                            <property name="font">
+                             <font>
+                              <pointsize>14</pointsize>
+                              <italic>false</italic>
+                              <bold>false</bold>
+                             </font>
+                            </property>
                             <property name="text">
                              <string>тут має бути щось круте</string>
                             </property>
@@ -3908,6 +3950,13 @@ background-color:black
                               <width>0</width>
                               <height>30</height>
                              </size>
+                            </property>
+                            <property name="font">
+                             <font>
+                              <pointsize>14</pointsize>
+                              <italic>false</italic>
+                              <bold>false</bold>
+                             </font>
                             </property>
                             <property name="styleSheet">
                              <string notr="true">background-color: rgb(52, 59, 72)</string>
