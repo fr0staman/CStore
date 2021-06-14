@@ -40,6 +40,12 @@ CStore::CStore(QWidget *parent)
     ui.tableWidgetTovar->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
     ui.tableWidgetOrder->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
     ui.tableWidgetJournal->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
+    ui.idText->setValidator(new QIntValidator(0, 100, this));
+    ui.priceText->setValidator(new QIntValidator(0, 100, this));
+    ui.numberText->setValidator(new QIntValidator(0, 100, this));
+    ui.idTextOrder->setValidator(new QIntValidator(0, 100, this));
+    ui.idTovarText->setValidator(new QIntValidator(0, 100, this));
+    ui.numberOrderText->setValidator(new QIntValidator(0, 100, this));
     setDateText();
 }
 
