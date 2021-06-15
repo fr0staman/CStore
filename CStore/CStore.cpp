@@ -10,10 +10,8 @@ CStore::CStore(QWidget *parent)
     : QMainWindow(parent, Qt::FramelessWindowHint)
 {
     ui.setupUi(this);
-    //setWindowFlags(Qt::FramelessWindowHint);
     setWindowIcon(QIcon(":/CStore/icons/icon_c.png"));
     //ui.tableWidget->setSortingEnabled(true);
-    
     //connect(ui.tovarButton, SIGNAL(clicked()), this, SLOT(tovarButton()));
     //connect(ui.orderButton, SIGNAL(clicked()), this, SLOT(orderButton()));
     connect(ui.closeButton, SIGNAL(clicked()), this, SLOT(close()));
@@ -40,12 +38,12 @@ CStore::CStore(QWidget *parent)
     ui.tableWidgetTovar->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
     ui.tableWidgetOrder->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
     ui.tableWidgetJournal->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
-    ui.idText->setValidator(new QIntValidator(0, 100, this));
-    ui.priceText->setValidator(new QIntValidator(0, 100, this));
-    ui.numberText->setValidator(new QIntValidator(0, 100, this));
-    ui.idTextOrder->setValidator(new QIntValidator(0, 100, this));
-    ui.idTovarText->setValidator(new QIntValidator(0, 100, this));
-    ui.numberOrderText->setValidator(new QIntValidator(0, 100, this));
+    ui.idText->setValidator(new QRegularExpressionValidator(QRegularExpression("[0-9]*"), this));
+    ui.priceText->setValidator(new QRegularExpressionValidator(QRegularExpression("[0-9]*"), this));
+    ui.numberText->setValidator(new QRegularExpressionValidator(QRegularExpression("[0-9]*"), this));
+    ui.idTextOrder->setValidator(new QRegularExpressionValidator(QRegularExpression("[0-9]*"), this));
+    ui.idTovarText->setValidator(new QRegularExpressionValidator(QRegularExpression("[0-9]*"), this));
+    ui.numberOrderText->setValidator(new QRegularExpressionValidator(QRegularExpression("[0-9]*"), this));
     setDateText();
 }
 
