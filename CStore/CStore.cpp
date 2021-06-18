@@ -11,9 +11,6 @@ CStore::CStore(QWidget *parent)
 {
     ui.setupUi(this);
     setWindowIcon(QIcon(":/CStore/icons/icon_c.png"));
-    //ui.tableWidget->setSortingEnabled(true);
-    //connect(ui.tovarButton, SIGNAL(clicked()), this, SLOT(tovarButton()));
-    //connect(ui.orderButton, SIGNAL(clicked()), this, SLOT(orderButton()));
     connect(ui.closeButton, SIGNAL(clicked()), this, SLOT(close()));
     connect(ui.maximizeButton, SIGNAL(clicked()), this, SLOT(Maximize()));
     connect(ui.minimizeButton, SIGNAL(clicked()), this, SLOT(showMinimized()));
@@ -102,7 +99,9 @@ void CStore::addingJournal(int id, std::string oper, std::string date)
 
 void CStore::addingOrder()
 {
-    if (ui.idTovarText->text() != "" && ui.numberOrderText->text() != "" && ui.idTextOrder->text() != "")
+    if (ui.idTovarText->text() != "" 
+        && ui.numberOrderText->text() != "" 
+        && ui.idTextOrder->text() != "")
     {
         std::fstream fileInput;
         using json = nlohmann::json;
@@ -134,7 +133,10 @@ void CStore::addingOrder()
 
 void CStore::addingTovar()
 {
-    if (ui.idText->text() != "" && ui.nameText->text() != "" && ui.priceText->text() != "" && ui.numberText->text() != "")
+    if (ui.idText->text() != "" 
+        && ui.nameText->text() != "" 
+        && ui.priceText->text() != "" 
+        && ui.numberText->text() != "")
     {
         std::fstream fileInput;
         using json = nlohmann::json;
@@ -162,6 +164,7 @@ void CStore::addingTovar()
         addingJournal(1, "Tovar", setDateText());
     }
 }
+
 void CStore::Searching()
 {
     ui.tableWidgetTovar->setRowCount(0);
@@ -377,3 +380,4 @@ void CStore::fillTovarTable(std::string name, std::vector<std::string> keys, QSt
         fileInput.close();
     return;
 }
+

@@ -7,7 +7,7 @@ Login::Login(QWidget *parent)
 {
 	ui.setupUi(this);
 	this->setAttribute(Qt::WA_TranslucentBackground);
-	setWindowIcon(QIcon(":/CStore/icons/icon.png"));
+	setWindowIcon(QIcon(":/CStore/icons/icon_ñ.png"));
 	connect(ui.pushButtonLogin, SIGNAL(released()), this, SLOT(checkLogin()));
 	connect(ui.lineLogin, SIGNAL(returnPressed()), this, SLOT(setFocusPass()));
 	connect(ui.linePass, SIGNAL(returnPressed()), this, SLOT(checkLogin()));
